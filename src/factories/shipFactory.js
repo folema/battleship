@@ -22,18 +22,24 @@ const shipFactory = (type)=>{
     let hit = 0
     let isSunk = false
     const sinks = ()=>{
-        if(hit >= shipLength())return isSunk = true
-        else return isSunk = false
+        if(hit === shipLength()){
+            isSunk = true
+            return isSunk
+        }
+        else {
+            isSunk = false
+            return isSunk
+        }
     }
     const impact = ()=>{
         hit++
-        sinks()
-        return hit
+        
+        return hit,sinks()
     }
     return {ship: shipType,
             shipLength: shipLength(),
             impact,
-            sinks  
+            sinks,  
             } 
 }
 

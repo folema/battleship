@@ -1,0 +1,29 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header{
+    padding: .5rem;
+    margin-bottom: 2rem;
+}
+.child-container{
+    display: flex;
+    flex-direction: column;
+}
+.sign-up-form{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+}
+.friendly-waters{
+    border: 1px solid rgb(1, 129, 1);
+    display: grid;
+    grid-template-columns: repeat(10, 1fr) ;
+}
+.tile{
+    border: 2px solid black;
+    width: 2rem;
+    height: 2rem;
+}

@@ -22,9 +22,18 @@ const playerFactory = (playerName, isAi)=>{
             return "Can not fire twice at same coordinate"
         }
         else {
-            if (isNaN(obj[coordOne][coordTwo])){
+            let shipImpact = obj.gameBoard.board[coordOne][coordTwo]
+            if (isNaN(shipImpact)){
                 oppositionBoard[coordOne][coordTwo] = "Hit"
+                for (let i = 0; i < obj.navy.length; i++){
+                    if (obj.navy[i].ship=== shipImpact){
+                        obj.navy[i].impact()
+                    return oppositionBoard
+                }
+                }
+                    
                 return oppositionBoard
+                
             }
             else {
                 oppositionBoard[coordOne][coordTwo] = "Miss"
