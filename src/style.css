@@ -17,8 +17,20 @@ header{
     gap: .5rem;
     align-items: center;
 }
+.game-controls-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "display display"
+    "friendly shipyard";
+    gap: 3rem;
+}
+.display{
+    grid-area: display;
+}
 .friendly-waters{
     border: 1px solid rgb(1, 129, 1);
+    grid-area: friendly;
     display: grid;
     grid-template-columns: repeat(10, 1fr) ;
 }
@@ -26,4 +38,18 @@ header{
     border: 2px solid black;
     width: 2rem;
     height: 2rem;
+}
+.shipyard{
+    width: 20rem;
+    height: 20rem;
+    border: 2px solid black;
+    grid-area: shipyard;
+}
+.ship{
+    background-color: aqua;
+    rotate: 0deg;
+}
+
+.placed-ship{
+    background-color: aquamarine;
 }

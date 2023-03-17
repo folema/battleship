@@ -1,5 +1,8 @@
 const childContainer = document.getElementById("child-container")
 const makePlayerGameBoard = (obj)=>{
+    const gameControlsContainer = document.createElement("div")
+    gameControlsContainer.id = "game-controls-container"
+    gameControlsContainer.className = "game-controls-container"
     const displayDiv = document.createElement("div")
     displayDiv.className = "display-div"
     displayDiv.id = "display-div"
@@ -7,7 +10,7 @@ const makePlayerGameBoard = (obj)=>{
     display.className = "display"
     display.id = "display"
     displayDiv.appendChild(display)
-    childContainer.appendChild(displayDiv)
+    gameControlsContainer.appendChild(displayDiv)
     let boardPlaces = obj.gameBoard.board
     let keys = Object.keys(boardPlaces)
     const friendlyWaters = document.createElement("div")
@@ -22,7 +25,8 @@ const makePlayerGameBoard = (obj)=>{
 
         }
     })
-    childContainer.appendChild(friendlyWaters)
+    gameControlsContainer.appendChild(friendlyWaters)
+    childContainer.appendChild(gameControlsContainer)
 
 }
 
