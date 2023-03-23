@@ -24,6 +24,7 @@ test("places ship on board",()=>{
         d: ["Carrier","Battleship",2,3,4,5,6,7,8,9],
         e: ["Carrier",1,2,3,4,5,6,7,8,9],
         f: [0,1,2,3,4,5,6,7,8,9],
+        g: [0,1,2,3,4,5,6,7,8,9],
         h: [0,1,2,3,4,5,6,7,8,9],
         i: [0,1,2,3,4,5,6,7,8,9],
         j: [0,1,2,3,4,5,6,7,8,9]})
@@ -37,6 +38,7 @@ test("places ship horizontal on board",()=>{
          d: ["Carrier","Battleship",2,3,4,5,6,7,8,9],
          e: ["Carrier",1,2,3,4,5,6,7,8,9],
          f: [0,1,2,3,4,5,6,7,8,9],
+         g: [0,1,2,3,4,5,6,7,8,9],
          h: [0,1,2,3,4,5,6,7,8,9],
          i: [0,1,2,3,4,5,6,7,8,9],
          j: [0,1,2,3,4,5,6,7,8,9]})
@@ -46,4 +48,7 @@ test("Returns true if horizontal places are available",()=>{
 })
 test("Returns false if horizontal places are taken", ()=>{
     expect(board.checkavailable({ship: navyOne[3], cord: {e: [0,1,2]}, horizontal: true})).toBe(false)
+})
+test("return false if place does not excist", ()=>{
+    expect(board.checkavailable({ship: navyOne[3], cord: {e: [12,13,14]}, horizontal: true})).toBe(false)
 })

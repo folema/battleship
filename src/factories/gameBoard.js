@@ -5,6 +5,7 @@ const gameboard = ()=>{
         d: [0,1,2,3,4,5,6,7,8,9],
         e: [0,1,2,3,4,5,6,7,8,9],
         f: [0,1,2,3,4,5,6,7,8,9],
+        g: [0,1,2,3,4,5,6,7,8,9],
         h: [0,1,2,3,4,5,6,7,8,9],
         i: [0,1,2,3,4,5,6,7,8,9],
         j: [0,1,2,3,4,5,6,7,8,9]}
@@ -26,6 +27,7 @@ const gameboard = ()=>{
             }
         }
     const check = (key,index)=>{
+        if(board[key]=== undefined)return false
         if(isNaN(board[key][index])) return false
         else return true
         }
@@ -35,12 +37,11 @@ const gameboard = ()=>{
         let horizontal = obj.horizontal
         if (!horizontal){
             coordKeys.forEach((key)=>{
-                if (!check(key, obj.cord[key])){
+                if (!check(key, obj.cord[key])){  
                     available = false
                     return available
                 }
-                else {
-                    
+                else { 
                     return 
                 }
             })            
@@ -59,7 +60,6 @@ const gameboard = ()=>{
             
         }
         return available
-        
     }
     return{board, placeShip, checkavailable}
 }

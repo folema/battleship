@@ -12,6 +12,7 @@ const playerFactory = (playerName, isAi)=>{
                           d: [0,1,2,3,4,5,6,7,8,9],
                           e: [0,1,2,3,4,5,6,7,8,9],
                           f: [0,1,2,3,4,5,6,7,8,9],
+                          g: [0,1,2,3,4,5,6,7,8,9],
                           h: [0,1,2,3,4,5,6,7,8,9],
                           i: [0,1,2,3,4,5,6,7,8,9],
                           j: [0,1,2,3,4,5,6,7,8,9]}
@@ -19,7 +20,7 @@ const playerFactory = (playerName, isAi)=>{
         let coordOne = Object.keys(coord)
         let coordTwo = Object.values(coord)
         if (isNaN(oppositionBoard[coordOne][coordTwo])){
-            return "Can not fire twice at same coordinate"
+            return -1
         }
         else {
             let shipImpact = obj.gameBoard.board[coordOne][coordTwo]
@@ -28,7 +29,7 @@ const playerFactory = (playerName, isAi)=>{
                 for (let i = 0; i < obj.navy.length; i++){
                     if (obj.navy[i].ship=== shipImpact){
                         obj.navy[i].impact()
-                    return oppositionBoard
+                    return oppositionBoard, 1
                 }
                 }
                     
@@ -37,7 +38,7 @@ const playerFactory = (playerName, isAi)=>{
             }
             else {
                 oppositionBoard[coordOne][coordTwo] = "Miss"
-                return oppositionBoard
+                return oppositionBoard, 0
             }
         }   
     }

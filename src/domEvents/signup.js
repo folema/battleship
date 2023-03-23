@@ -13,7 +13,7 @@ const start = ()=>{
         const playerTwo = playerFactory("Macintosh", true)
         clearChildContainer()
         makePlayerGameBoard(playerOne)
-        placeShip(playerOne)
+        placeShip(playerOne, playerTwo)
         return playerOne, playerTwo
     }
     

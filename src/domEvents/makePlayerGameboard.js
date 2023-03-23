@@ -27,7 +27,6 @@ const makePlayerGameBoard = (obj)=>{
     })
     gameControlsContainer.appendChild(friendlyWaters)
     childContainer.appendChild(gameControlsContainer)
-
 }
 
 export {makePlayerGameBoard}

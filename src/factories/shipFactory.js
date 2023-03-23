@@ -24,6 +24,7 @@ const shipFactory = (type)=>{
     const sinks = ()=>{
         if(hit === shipLength()){
             isSunk = true
+            
             return isSunk
         }
         else {
